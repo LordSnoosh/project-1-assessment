@@ -4,12 +4,12 @@ var totalDisp = {
     inputnumber: ""
 };
 function initadd() {
-totalDisp.totalvalue = addition(result);
-totalDisp.initvalue = addition(inptval);
+totalDisp.totalvalue = addition.result;
+totalDisp.initvalue = addition.inptval;
 };
 function initsub() {
-    totalDisp.totalvalue = subtraction(result);
-    totalDisp.initvalue = subtraction(inptval);
+    totalDisp.totalvalue = subtraction.result;
+    totalDisp.initvalue = subtraction.inptva);
     };
 
 
