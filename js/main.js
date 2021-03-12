@@ -1,28 +1,37 @@
+// App State
 let runningTotal;
+// Cached Elements
+const input1El = document.querySelector("#num2");
+const totalEl = document.querySelector("h1 span");
+// Event Listeners
+document.querySelector("#plus").addEventListener("click", handleClick);
+document.querySelector("#minus").addEventListener("click", handleClick);
+
+// Functions
 
 
-const input1El = document.querySelector("#input");
 
 function init() {
-    runningTotal = 0;
-    render();
-  };
+  runningTotal = 0;
+  render();
+};
 
-  function render() {
-    if (runningTotal >= 0) {
-      totalEl.textContent = "+" + runningTotal;
-      totalEl.style.color = "green";
-    } else {
-      totalEl.textContent = runningTotal;
-      totalEl.style.color = "red";
-    }
-  };
+init();
 
-  function handleClick() {
-    let input1Value = parseInt(input1El.value);
-    let input2Value = parseInt(runningTotal.value);
-   
-    runningTotal += (input1Value + input2Value);
-    render();
-    input1El.value = input2El.value =input3El.value = "";
-  };
+function render() {
+  if (runningTotal >= 0) {
+    totalEl.textContent = "+" + runningTotal;
+    totalEl.style.color = "green";
+  } else {
+    totalEl.textContent = runningTotal;
+    totalEl.style.color = "red";
+  }
+};
+
+function handleClick() {
+  let input1Value = parseInt(input1El.value);
+  let input3Value = parseInt(runningTotal.value);
+  total += (input1Value + input3Value);
+  render();
+  input1El.value = input2El.value =input3El.value = "";
+};
