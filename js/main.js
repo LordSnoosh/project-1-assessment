@@ -13,7 +13,7 @@ function initsub() {
     };
 
 
-totalDisp.totalvalue = document.getElementById("display");
+totalDisp.totalvalue = document.getElementById("disp");
 totalDisp.inputnumber = document.getElementById("input");
 document.getElementById("plusId").addEventListener("click", addition);
 document.getElementById("minusId").addEventListener("click", subtraction);
@@ -27,9 +27,9 @@ initadd();
 };
 
 function subtraction() {
+    var initval = parseInt(totalDisp.totalvalue);
     var inptval = parseInt(document.getElementById("input").value);
-    var initval = parseInt(totalDisp.initvalue);
     var result = initval - inptval;
-    document.getElementById("display").innerHTML = result;
+    document.getElementById("disp").innerHTML = result;
     initsub();
     };
