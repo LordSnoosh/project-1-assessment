@@ -8,7 +8,7 @@ totalDisp.totalvalue = addition.result;
 totalDisp.initvalue = addition.inptval;
 };
 function initsub() {
-    totalDisp.totalvalue = subtraction.result;
+    totalDisp.totalvalue = subtraction.ansD;
     totalDisp.initvalue = subtraction.inptval;
     };
 
@@ -22,14 +22,15 @@ function addition() {
 var inptval = parseInt(document.getElementById("input").value);
 var initval = parseInt(totalDisp.initvalue);
 var result = inptval + initval;
-document.getElementById("disp").innerHTML = result;
+document.getElementById("disp").value = result;
 initadd();
 };
 
 function subtraction() {
-    var initval = totalDisp.totalvalue;
-    var inptval = parseInt(document.getElementById("input").value);
-    var result = initval - inptval;
-    document.getElementById("disp").innerHTML = result;
-    console.log(result)
+    var total = parseInt(document.getElementById("disp").value);
+    var val2 = parseInt(document.getElementById("input").value);
+    var result = total - val2;
+    document.getElementById("disp").value = result;
+    initsub();
     };
+
