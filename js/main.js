@@ -3,9 +3,18 @@ var totalDisp = {
     initvalue: 1,
     inputnumber: ""
 };
+function initadd() {
+totalDisp.totalvalue = addition(result);
+totalDisp.initvalue = addition(inptval);
+};
+function initsub() {
+    totalDisp.totalvalue = subtraction(result);
+    totalDisp.initvalue = subtraction(inptval);
+    };
+
 
 totalDisp.totalvalue = document.getElementById("display");
-totalDisp.inputnumber = document.getElementById("input")
+totalDisp.inputnumber = document.getElementById("input");
 document.getElementById("plusId").addEventListener("click", addition);
 document.getElementById("minusId").addEventListener("click", subtraction);
 
@@ -14,12 +23,13 @@ var inptval = parseInt(document.getElementById("input").value);
 var initval = parseInt(totalDisp.initvalue);
 var result = inptval + initval;
 document.getElementById("display").value = result;
-return false;
+initadd();
 };
 
 function subtraction() {
     var inptval = parseInt(document.getElementById("input").value);
-    var initval = totalDisp.initvalue;
-    var minused = parseInt(inptval) - parseInt(initval);
-    
+    var initval = parseInt(totalDisp.initvalue);
+    var result = inptval - initval;
+    document.getElementById("display").value = result;
+    initsub();
     };
