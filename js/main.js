@@ -13,8 +13,8 @@ function initsub() {
     };
 
 
-totalDisp.totalvalue = document.getElementById("disp");
-totalDisp.inputnumber = document.getElementById("input");
+totalDisp.totalvalue = document.getElementById("disp").value;
+totalDisp.inputnumber = document.getElementById("input").value;
 document.getElementById("plusId").addEventListener("click", addition);
 document.getElementById("minusId").addEventListener("click", subtraction);
 
@@ -22,15 +22,15 @@ function addition() {
 var inptval = parseInt(document.getElementById("input").value);
 var initval = parseInt(totalDisp.initvalue);
 var result = inptval + initval;
-document.getElementById("disp").value = result;
+document.getElementById("disp").innerHTML = result;
 initadd();
 };
 
 function subtraction() {
-    var total = parseInt(document.getElementById("disp").value);
+    var total = parseInt(document.getElementById("disp").innerHTML);
     var val2 = parseInt(document.getElementById("input").value);
     var result = total - val2;
-    document.getElementById("disp").value = result;
+    document.getElementById("disp").innerHTML = result;
     initsub();
     };
 
