@@ -1,6 +1,6 @@
 var totalDisp = {
     totalvalue: [],
-    initvalue: 1,
+    initvalue: 0,
     inputnumber: ""
 };
 function initadd() {
@@ -9,7 +9,7 @@ totalDisp.initvalue = addition.inptval;
 };
 function initsub() {
     totalDisp.totalvalue = subtraction.result;
-    totalDisp.initvalue = subtraction.inptva);
+    totalDisp.initvalue = subtraction.inptval;
     };
 
 
@@ -22,14 +22,14 @@ function addition() {
 var inptval = parseInt(document.getElementById("input").value);
 var initval = parseInt(totalDisp.initvalue);
 var result = inptval + initval;
-document.getElementById("display").value = result;
+document.getElementById("display").innerHTML = result;
 initadd();
 };
 
 function subtraction() {
     var inptval = parseInt(document.getElementById("input").value);
     var initval = parseInt(totalDisp.initvalue);
-    var result = inptval - initval;
-    document.getElementById("display").value = result;
+    var result = initval - inptval;
+    document.getElementById("display").innerHTML = result;
     initsub();
     };
