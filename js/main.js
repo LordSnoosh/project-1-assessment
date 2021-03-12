@@ -1,36 +1,28 @@
-var totalDisp = {
-    totalvalue: 0,
-    initvalue: 0,
-    inputnumber: 0,
-};
-function initadd() {
-totalDisp.totalvalue = addition.result;
-totalDisp.initvalue = addition.inptval;
-};
-function initsub() {
-    totalDisp.totalvalue = subtraction.ansD;
-    totalDisp.initvalue = subtraction.inptval;
-    };
+let runningTotal;
 
 
-totalDisp.totalvalue = document.getElementById("disp").innerHTML;
-totalDisp.inputnumber = document.getElementById("input").innerHTML;
-document.getElementById("plusId").addEventListener("click", addition);
-document.getElementById("minusId").addEventListener("click", subtraction);
+const input1El = document.querySelector("#input");
 
-function addition() {
-var inptval = parseInt(document.getElementById("input").innerHTML);
-var initval = parseInt(totalDisp.initvalue);
-var result = inptval + initval;
-document.getElementById("disp").innerHTML = result;
-initadd();
-};
+function init() {
+    runningTotal = 0;
+    render();
+  };
 
-function subtraction() {
-    var total = parseInt(document.getElementById("disp").innerHTML);
-    var val2 = parseInt(document.getElementById("input").innerHTML);
-    var result = total - val2;
-    document.getElementById("disp").innerHTML = result;
-    initsub();
-    };
+  function render() {
+    if (runningTotal >= 0) {
+      totalEl.textContent = "+" + runningTotal;
+      totalEl.style.color = "green";
+    } else {
+      totalEl.textContent = runningTotal;
+      totalEl.style.color = "red";
+    }
+  };
 
+  function handleClick() {
+    let input1Value = parseInt(input1El.value);
+    let input2Value = parseInt(runningTotal.value);
+   
+    runningTotal += (input1Value + input2Value);
+    render();
+    input1El.value = input2El.value =input3El.value = "";
+  };
